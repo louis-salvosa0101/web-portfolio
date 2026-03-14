@@ -32,8 +32,8 @@ const Contact = () => {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-6xl font-display font-bold text-white mb-8"
                     >
-                        Ready to Build Your <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">AI-Powered Future?</span>
+                        Let’s Build Your <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">Next Web Project</span>
                     </motion.h2>
 
                     <motion.p
@@ -43,7 +43,7 @@ const Contact = () => {
                         transition={{ delay: 0.2 }}
                         className="text-xl text-text-secondary mb-12 max-w-2xl mx-auto"
                     >
-                        I've streamlined my inquiry process using AI. Click below to open my **n8n-powered** form. Your request goes directly into my workflow for a faster, more intelligent response.
+                        Interested in working together on a web development project? Click below to get in touch and let’s create something amazing for the web!
                     </motion.p>
 
                     <motion.div

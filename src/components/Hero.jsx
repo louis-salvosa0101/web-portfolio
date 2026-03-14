@@ -19,7 +19,7 @@ const Hero = () => {
                     className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-accent text-sm font-medium mb-6"
                 >
                     <Sparkles size={16} />
-                    <span>AI Automation Workflow</span>
+                    <span>Web Development Portfolio</span>
                 </motion.div>
 
                 <motion.h1
@@ -29,7 +29,7 @@ const Hero = () => {
                     className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight"
                 >
                     I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">LOUIS SALVOSA</span> <br />
-                    AI Automation Workflow Specialist
+                    Web Developer & Frontend Specialist
                 </motion.h1>
 
                 <motion.p
@@ -38,7 +38,7 @@ const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10"
                 >
-                    I specialize in building powerful, custom automation solutions using leading platforms to streamline your operations and drive growth.
+                    I specialize in building modern, responsive, and high-performance web applications using the latest technologies. Let’s bring your ideas to life on the web!
                 </motion.p>
 
                 <motion.div
@@ -69,44 +69,32 @@ const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="border-t border-white/5 pt-8"
                 >
-                    <p className="text-text-secondary text-sm mb-6 uppercase tracking-wider">Powering Enterprise Growth With</p>
+                    <p className="text-text-secondary text-sm mb-6 uppercase tracking-wider">Web Development Technologies</p>
                     <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
-                        {/* n8n */}
-                        <div className="flex items-center gap-2" title="n8n">
-                            <img src="https://cdn.simpleicons.org/n8n/white" alt="n8n" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
-                            <span className="font-display font-bold text-white text-lg">n8n</span>
+                        {/* React */}
+                        <div className="flex items-center gap-2" title="React">
+                            <img src="https://cdn.simpleicons.org/react/white" alt="React" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
+                            <span className="font-display font-bold text-white text-lg">React</span>
                         </div>
-
-                        {/* Zapier */}
-                        <div className="flex items-center gap-2" title="Zapier">
-                            <img src="https://cdn.simpleicons.org/zapier/white" alt="Zapier" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
-                            <span className="font-display font-bold text-white text-lg">Zapier</span>
+                        {/* JavaScript */}
+                        <div className="flex items-center gap-2" title="JavaScript">
+                            <img src="https://cdn.simpleicons.org/javascript/white" alt="JavaScript" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
+                            <span className="font-display font-bold text-white text-lg">JavaScript</span>
                         </div>
-
-                        {/* Make */}
-                        <div className="flex items-center gap-2" title="Make">
-                            <img src="https://cdn.simpleicons.org/make/white" alt="Make" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
-                            <span className="font-display font-bold text-white text-lg">Make</span>
+                        {/* HTML5 */}
+                        <div className="flex items-center gap-2" title="HTML5">
+                            <img src="https://cdn.simpleicons.org/html5/white" alt="HTML5" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
+                            <span className="font-display font-bold text-white text-lg">HTML5</span>
                         </div>
-
-                        {/* HighLevel */}
-                        <div className="flex items-center gap-2" title="GoHighLevel">
-                            <div className="flex items-center gap-1 text-white font-display font-bold text-lg tracking-tight">
-                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-accent">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z" />
-                                </svg>
-                                HighLevel
-                            </div>
+                        {/* CSS3 */}
+                        <div className="flex items-center gap-2" title="CSS3">
+                            <img src="https://cdn.simpleicons.org/css3/white" alt="CSS3" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
+                            <span className="font-display font-bold text-white text-lg">CSS3</span>
                         </div>
-
-                        {/* OpenAI */}
-                        <div className="flex items-center gap-2" title="OpenAI">
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"
-                                alt="OpenAI"
-                                className="h-8 w-auto brightness-0 invert hover:opacity-80 transition-all duration-300"
-                            />
-
+                        {/* Node.js */}
+                        <div className="flex items-center gap-2" title="Node.js">
+                            <img src="https://cdn.simpleicons.org/nodedotjs/white" alt="Node.js" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
+                            <span className="font-display font-bold text-white text-lg">Node.js</span>
                         </div>
                     </div>
                 </motion.div>

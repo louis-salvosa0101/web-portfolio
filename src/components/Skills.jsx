@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
 const skills = [
-    { category: 'Automation Platforms', items: ['n8n', 'Make.com', 'Zapier', 'Pabbly', 'Bardeen'] },
-    { category: 'CRM & Marketing', items: ['HighLevel (GHL)', 'Salesforce', 'HubSpot', 'ActiveCampaign', 'Airtable'] },
-    { category: 'Scripting & AI', items: ['Python', 'JavaScript/Node.js', 'OpenAI API', 'LangChain', 'Anthropic Claude'] },
+    { category: 'Frontend', items: ['React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Vite'] },
+    { category: 'Backend', items: ['Node.js', 'Express', 'REST APIs'] },
+    { category: 'Tools & Platforms', items: ['Git & GitHub', 'Vercel', 'Netlify', 'Figma'] },
 ];
 
 const Skills = () => {
@@ -19,9 +19,9 @@ const Skills = () => {
                     viewport={{ once: true }}
                     className="mb-16 text-center"
                 >
-                    <h2 className="text-4xl font-display font-bold text-white mb-4">Tech Stack</h2>
+                    <h2 className="text-4xl font-display font-bold text-white mb-4">Web Development Tech Stack</h2>
                     <p className="text-text-secondary max-w-2xl mx-auto">
-                        Tools and technologies I use to build high-impact AI automation workflows.
+                        Tools and technologies I use to build modern, responsive, and high-performance web applications.
                     </p>
                 </motion.div>
 

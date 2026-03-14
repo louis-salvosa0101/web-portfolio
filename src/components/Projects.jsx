@@ -3,11 +3,25 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
     {
-        title: 'Project Title', // Edit this
-        category: 'Category', // Edit this
-        description: 'Short project description goes here.', // Edit this
-        tags: ['Tag1', 'Tag2'], // Edit or add tags
-        image: 'https://via.placeholder.com/400x225?text=Project+Image', // Replace with your image URL
+        title: 'Personal Portfolio Website',
+        category: 'Frontend',
+        description: 'A modern, responsive portfolio website built with React and Tailwind CSS to showcase my web development skills and projects.',
+        tags: ['React', 'Tailwind CSS', 'Vite'],
+        image: 'https://via.placeholder.com/400x225?text=Portfolio+Website',
+    },
+    {
+        title: 'Blog Platform',
+        category: 'Full Stack',
+        description: 'A full-featured blog platform with user authentication, post creation, and comments, built using the MERN stack.',
+        tags: ['MongoDB', 'Express', 'React', 'Node.js'],
+        image: 'https://via.placeholder.com/400x225?text=Blog+Platform',
+    },
+    {
+        title: 'E-commerce Store',
+        category: 'Frontend',
+        description: 'A sleek e-commerce storefront with product listings, shopping cart, and checkout flow, built with React and integrated with Stripe for payments.',
+        tags: ['React', 'Stripe', 'JavaScript'],
+        image: 'https://via.placeholder.com/400x225?text=E-commerce+Store',
     },
 ];
 
@@ -21,7 +35,7 @@ const Projects = () => {
                     viewport={{ once: true }}
                     className="mb-16"
                 >
-                    <h2 className="text-4xl font-display font-bold text-white mb-4">Selected Works</h2>
+                    <h2 className="text-4xl font-display font-bold text-white mb-4">Web Development Projects</h2>
                     <div className="h-1 w-20 bg-accent rounded-full" />
                 </motion.div>
 
