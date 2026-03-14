@@ -71,16 +71,16 @@ const Contact = () => {
                                 <Mail size={16} />
                                 <span>Or email me at:</span>
                                 <a
-                                    href="mailto:louissalvosa@gmail.com"
+                                    href="mailto:karllouis.salvosa@gmail.com"
                                     className="text-white hover:text-accent transition-colors underline decoration-accent/30 underline-offset-4 decoration-2 hover:decoration-accent transition-all font-medium"
                                 >
-                                    louissalvosa@gmail.com
+                                    karllouis.salvosa@gmail.com
                                 </a>
                             </div>
 
                             <button
                                 onClick={() => {
-                                    navigator.clipboard.writeText('louissalvosa@gmail.com');
+                                    navigator.clipboard.writeText('karllouis.salvosa@gmail.com');
                                     alert('Email copied to clipboard!');
                                 }}
                                 className="text-[10px] uppercase tracking-widest text-text-secondary hover:text-white transition-colors bg-white/5 px-3 py-1 rounded-full border border-white/5 hover:border-white/10"
