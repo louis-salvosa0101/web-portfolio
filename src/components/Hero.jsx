@@ -88,7 +88,7 @@ const Hero = () => {
                         </div>
                         {/* CSS3 */}
                         <div className="flex items-center gap-2" title="CSS3">
-                            <img src="https://cdn.simpleicons.org/css3/white" alt="CSS3" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
+                            <img src="https://cdn.simpleicons.org/css/white" alt="CSS3" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
                             <span className="font-display font-bold text-white text-lg">CSS3</span>
                         </div>
                         {/* Python */}
