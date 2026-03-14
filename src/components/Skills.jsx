@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
 const skills = [
-    { category: 'Frontend', items: ['React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Vite'] },
-    { category: 'Backend', items: ['Node.js', 'Express', 'REST APIs'] },
-    { category: 'Tools & Platforms', items: ['Git & GitHub', 'Vercel', 'Netlify', 'Figma'] },
+    { category: 'Frontend', items: ['React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Vite', 'Next.js'] },
+    { category: 'Backend', items: ['Python','FastAPI', 'Express', 'REST APIs'] },
+    { category: 'Tools & Platforms', items: ['Git & GitHub', 'Vercel', 'Render', 'Figma'] },
 ];
 
 const Skills = () => {
