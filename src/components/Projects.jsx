@@ -3,25 +3,11 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
     {
-        title: 'Enterprise Lead Scoring System',
-        category: 'HighLevel + Make',
-        description: 'Automated lead capture, qualification, and routing system using HighLevel forms and Make.com complex logic scenarios.',
-        tags: ['HighLevel', 'Make', 'OpenAI'],
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800', // Dashboard/Data
-    },
-    {
-        title: 'Multi-Channel Support Bot',
-        category: 'n8n Automation',
-        description: 'Self-hosted n8n workflow that orchestrates support tickets between Slack, Email, and Jira using AI for sentiment analysis.',
-        tags: ['n8n', 'Slack API', 'Jira'],
-        image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800', // Communication/Tech
-    },
-    {
-        title: 'E-commerce Order Sync',
-        category: 'Zapier Integration',
-        description: 'Robust sync pipeline ensuring 100% data accuracy between Shopify, QuickBooks, and inventory management systems.',
-        tags: ['Zapier', 'Shopify', 'Webhooks'],
-        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=800', // E-commerce
+        title: 'Project Title', // Edit this
+        category: 'Category', // Edit this
+        description: 'Short project description goes here.', // Edit this
+        tags: ['Tag1', 'Tag2'], // Edit or add tags
+        image: 'https://via.placeholder.com/400x225?text=Project+Image', // Replace with your image URL
     },
 ];
 
