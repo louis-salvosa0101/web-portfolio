@@ -71,10 +71,10 @@ const Hero = () => {
                 >
                     <p className="text-text-secondary text-sm mb-6 uppercase tracking-wider">Web Development Technologies</p>
                     <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
-                        {/* React */}
-                        <div className="flex items-center gap-2" title="React">
-                            <img src="https://cdn.simpleicons.org/react/white" alt="React" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
-                            <span className="font-display font-bold text-white text-lg">React</span>
+                        {/* FastAPI */}
+                        <div className="flex items-center gap-2" title="FastAPI">
+                            <img src="https://cdn.simpleicons.org/fastapi/white" alt="FastAPI" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
+                            <span className="font-display font-bold text-white text-lg">FastAPI</span>
                         </div>
                         {/* JavaScript */}
                         <div className="flex items-center gap-2" title="JavaScript">
@@ -91,10 +91,10 @@ const Hero = () => {
                             <img src="https://cdn.simpleicons.org/css3/white" alt="CSS3" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
                             <span className="font-display font-bold text-white text-lg">CSS3</span>
                         </div>
-                        {/* Node.js */}
-                        <div className="flex items-center gap-2" title="Node.js">
-                            <img src="https://cdn.simpleicons.org/nodedotjs/white" alt="Node.js" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
-                            <span className="font-display font-bold text-white text-lg">Node.js</span>
+                        {/* Python */}
+                        <div className="flex items-center gap-2" title="Python">
+                            <img src="https://cdn.simpleicons.org/python/white" alt="Python" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
+                            <span className="font-display font-bold text-white text-lg">Python</span>
                         </div>
                     </div>
                 </motion.div>
