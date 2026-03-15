@@ -8,6 +8,8 @@ const projects = [
         description: 'A modern, responsive portfolio website built with React and Tailwind CSS to showcase my web development skills and projects.',
         tags: ['React', 'Tailwind CSS', 'Vite'],
         image: 'https://via.placeholder.com/400x225?text=Portfolio+Website',
+        github: 'https://github.com/yourusername/portfolio',
+        demo: 'https://louis-salvosa0101.github.io/web-portfolio/',
     },
     {
         title: 'Blog Platform',
@@ -15,6 +17,8 @@ const projects = [
         description: 'A full-featured blog platform with user authentication, post creation, and comments, built using the MERN stack.',
         tags: ['MongoDB', 'Express', 'React', 'Node.js'],
         image: 'https://via.placeholder.com/400x225?text=Blog+Platform',
+        github: 'https://github.com/yourusername/blog-platform',
+        demo: 'https://yourblog.com',
     },
     {
         title: 'E-commerce Store',
@@ -22,6 +26,8 @@ const projects = [
         description: 'A sleek e-commerce storefront with product listings, shopping cart, and checkout flow, built with React and integrated with Stripe for payments.',
         tags: ['React', 'Stripe', 'JavaScript'],
         image: 'https://via.placeholder.com/400x225?text=E-commerce+Store',
+        github: 'https://github.com/yourusername/ecommerce-store',
+        demo: 'https://yourstore.com',
     },
 ];
 
@@ -64,9 +70,9 @@ const Projects = () => {
                                         <span className="text-accent text-xs font-bold tracking-wider uppercase">{project.category}</span>
                                         <h3 className="text-xl font-bold text-white mt-1 group-hover:text-accent transition-colors">{project.title}</h3>
                                     </div>
-                                    <div className="flex gap-2">
-                                        <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-white"><Github size={18} /></a>
-                                        <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-white"><ExternalLink size={18} /></a>
+                                    <div className="flex gap-2 relative z-10">
+                                        <a href={project.github || '#'} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-white/10 hover:text-accent transition-colors text-white"><Github size={18} /></a>
+                                        <a href={project.demo || '#'} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-white/10 hover:text-accent transition-colors text-white"><ExternalLink size={18} /></a>
                                     </div>
                                 </div>
 
