@@ -7,28 +7,28 @@ const projects = [
         category: 'Frontend',
         description: 'A modern, responsive portfolio website built with React and Tailwind CSS to showcase my web development skills and projects.',
         tags: ['React', 'Tailwind CSS', 'Vite'],
-        image: 'https://via.placeholder.com/400x225?text=Portfolio+Website',
-        github: 'https://github.com/yourusername/portfolio',
+        image: 'src/assets/project-images/web-portfolio.png',
+        github: 'https://github.com/louis-salvosa0101/web-portfolio',
         demo: 'https://louis-salvosa0101.github.io/web-portfolio/',
     },
-    {
-        title: 'Blog Platform',
-        category: 'Full Stack',
-        description: 'A full-featured blog platform with user authentication, post creation, and comments, built using the MERN stack.',
-        tags: ['MongoDB', 'Express', 'React', 'Node.js'],
-        image: 'https://via.placeholder.com/400x225?text=Blog+Platform',
-        github: 'https://github.com/yourusername/blog-platform',
-        demo: 'https://yourblog.com',
-    },
-    {
-        title: 'E-commerce Store',
-        category: 'Frontend',
-        description: 'A sleek e-commerce storefront with product listings, shopping cart, and checkout flow, built with React and integrated with Stripe for payments.',
-        tags: ['React', 'Stripe', 'JavaScript'],
-        image: 'https://via.placeholder.com/400x225?text=E-commerce+Store',
-        github: 'https://github.com/yourusername/ecommerce-store',
-        demo: 'https://yourstore.com',
-    },
+    // {
+    //     title: 'Blog Platform',
+    //     category: 'Full Stack',
+    //     description: 'A full-featured blog platform with user authentication, post creation, and comments, built using the MERN stack.',
+    //     tags: ['MongoDB', 'Express', 'React', 'Node.js'],
+    //     image: 'https://via.placeholder.com/400x225?text=Blog+Platform',
+    //     github: 'https://github.com/yourusername/blog-platform',
+    //     demo: 'https://yourblog.com',
+    // },
+    // {
+    //     title: 'E-commerce Store',
+    //     category: 'Frontend',
+    //     description: 'A sleek e-commerce storefront with product listings, shopping cart, and checkout flow, built with React and integrated with Stripe for payments.',
+    //     tags: ['React', 'Stripe', 'JavaScript'],
+    //     image: 'https://via.placeholder.com/400x225?text=E-commerce+Store',
+    //     github: 'https://github.com/yourusername/ecommerce-store',
+    //     demo: 'https://yourstore.com',
+    // },
 ];
 
 const Projects = () => {
@@ -80,7 +80,7 @@ const Projects = () => {
 
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.map((tag) => (
-                                        <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-xs text-text-secondary border border-white/5">
+                                        <span key={tag} className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium text-white border border-white/30">
                                             {tag}
                                         </span>
                                     ))}
