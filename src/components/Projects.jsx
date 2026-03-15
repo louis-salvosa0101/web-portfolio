@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import webPortfolioImg from '../assets/project-images/web-portfolio.png';
 
 const projects = [
     {
@@ -7,7 +8,7 @@ const projects = [
         category: 'Frontend',
         description: 'A modern, responsive portfolio website built with React and Tailwind CSS to showcase my web development skills and projects.',
         tags: ['React', 'Tailwind CSS', 'Vite'],
-        image: 'src/assets/project-images/web-portfolio.png',
+        image: webPortfolioImg,
         github: 'https://github.com/louis-salvosa0101/web-portfolio',
         demo: 'https://louis-salvosa0101.github.io/web-portfolio/',
     },
