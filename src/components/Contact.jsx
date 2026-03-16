@@ -1,106 +1,105 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Sparkles, MessageSquare, Mail } from 'lucide-react';
+import { ExternalLink, MessageSquare, Mail, Copy } from 'lucide-react';
+import { useState } from 'react';
 
 const Contact = () => {
     // REPLACE THIS URL WITH YOUR ACTUAL n8n FORM URL
     const N8N_FORM_URL = 'http://localhost:5678/form-test/60137ca7-0803-4e19-9f14-7b72508f38b1';
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText('karllouis.salvosa@gmail.com');
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
 
     return (
         <section id="contact" className="py-24 relative overflow-hidden">
-            {/* Background Decorations */}
+            {/* Background */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px]" />
-                <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/[0.06] rounded-full blur-[150px]" />
             </div>
 
-            <div className="max-w-5xl mx-auto px-6 relative z-10">
-                <div className="bg-secondary/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-16 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-bold mb-8"
-                    >
-                        <Sparkles size={16} />
-                        <span>WORK WITH ME</span>
-                    </motion.div>
-
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-display font-bold text-white mb-8"
-                    >
-                        Let’s Build Your <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">Next Web Project</span>
-                    </motion.h2>
-
+            <div className="max-w-3xl mx-auto px-6 relative z-10">
+                <div className="glass-panel rounded-3xl p-8 md:p-14 text-center">
+                    {/* Badge */}
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 12 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="text-xl text-text-secondary mb-12 max-w-2xl mx-auto"
+                        className="text-accent text-sm font-semibold uppercase tracking-widest mb-6"
                     >
-                        Interested in working together on a web development project? Click below to get in touch and let’s create something amazing for the web!
+                        Get in Touch
                     </motion.p>
 
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                    {/* Heading */}
+                    <motion.h2
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
+                        transition={{ delay: 0.08 }}
+                        className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6 leading-tight"
+                    >
+                        Let's Build Your{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-secondary">
+                            Next Project
+                        </span>
+                    </motion.h2>
+
+                    {/* Description */}
+                    <motion.p
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.16 }}
+                        className="text-text-secondary mb-10 max-w-lg mx-auto text-sm leading-relaxed"
+                    >
+                        Have a SaaS idea, need an AI integration, or want to collaborate
+                        on a full-stack project? I'd love to hear about it.
+                    </motion.p>
+
+                    {/* CTA Button */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.24 }}
                         className="flex flex-col items-center gap-6"
                     >
                         <a
                             href={N8N_FORM_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative inline-flex items-center justify-center gap-3 px-10 py-6 bg-accent text-white rounded-2xl font-bold text-xl hover:bg-blue-600 transition-all hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] hover:-translate-y-1"
+                            className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-accent text-white rounded-full font-semibold text-sm hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
                         >
-                            <MessageSquare className="group-hover:rotate-12 transition-transform" size={24} />
+                            <MessageSquare
+                                size={18}
+                                className="group-hover:rotate-6 transition-transform duration-200"
+                            />
                             Open Inquiry Form
-                            <ExternalLink size={20} className="opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-
-                            <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity blur-lg" />
+                            <ExternalLink size={14} className="opacity-50 group-hover:opacity-100 transition-opacity duration-200" />
                         </a>
 
-                        <div className="flex flex-col items-center gap-4">
+                        {/* Email */}
+                        <div className="flex flex-col items-center gap-3">
                             <div className="flex items-center gap-2 text-text-secondary text-sm">
-                                <Mail size={16} />
-                                <span>Or email me at:</span>
+                                <Mail size={14} />
+                                <span>Or reach me at</span>
                                 <a
                                     href="mailto:karllouis.salvosa@gmail.com"
-                                    className="text-white hover:text-accent transition-colors underline decoration-accent/30 underline-offset-4 decoration-2 hover:decoration-accent transition-all font-medium"
+                                    className="text-text-primary hover:text-accent transition-colors duration-200 font-medium cursor-pointer"
                                 >
                                     karllouis.salvosa@gmail.com
                                 </a>
                             </div>
 
                             <button
-                                onClick={() => {
-                                    navigator.clipboard.writeText('karllouis.salvosa@gmail.com');
-                                    alert('Email copied to clipboard!');
-                                }}
-                                className="text-[10px] uppercase tracking-widest text-text-secondary hover:text-white transition-colors bg-white/5 px-3 py-1 rounded-full border border-white/5 hover:border-white/10"
+                                onClick={handleCopy}
+                                className="inline-flex items-center gap-1.5 text-xs text-text-secondary hover:text-text-primary transition-colors duration-200 bg-white/[0.04] px-3 py-1 rounded-full border border-white/[0.06] hover:border-white/[0.1] cursor-pointer"
                             >
-                                Click to copy email
+                                <Copy size={10} />
+                                {copied ? 'Copied!' : 'Copy email'}
                             </button>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.5 }}
-                        className="mt-16 pt-8 border-t border-white/5 flex flex-wrap justify-center gap-8 opacity-40 grayscale"
-                    >
-                        {/* Subtle indicators of automation stack */}
-                        <div className="flex items-center gap-2">
-                            <img src="https://cdn.simpleicons.org/n8n/white" alt="n8n" className="h-5" />
-                            <span className="text-xs font-bold uppercase tracking-widest text-white">Automated</span>
                         </div>
                     </motion.div>
                 </div>

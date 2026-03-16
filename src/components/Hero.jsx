@@ -1,101 +1,122 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Bot, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import openaiIcon from '../assets/openai-colored.svg';
+
+const techStack = [
+    { name: 'React', icon: 'https://cdn.simpleicons.org/react/94A3B8' },
+    { name: 'Next.js', icon: 'https://cdn.simpleicons.org/nextdotjs/94A3B8' },
+    { name: 'Python', icon: 'https://cdn.simpleicons.org/python/94A3B8' },
+    { name: '', icon: openaiIcon },
+    { name: 'Node.js', icon: 'https://cdn.simpleicons.org/nodedotjs/94A3B8' },
+    { name: 'PostgreSQL', icon: 'https://cdn.simpleicons.org/postgresql/94A3B8' },
+];
 
 const Hero = () => {
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 pb-24 md:pb-0 overflow-hidden">
+        <section
+            id="hero"
+            className="relative min-h-screen flex items-center justify-center pt-20 pb-24 md:pb-0 overflow-hidden"
+        >
             {/* Background Elements */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-[100px]" />
-                <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px]" />
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent/[0.07] rounded-full blur-[150px]" />
+                <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent-secondary/[0.05] rounded-full blur-[150px]" />
+                <div className="absolute inset-0 noise-overlay" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+                {/* Badge */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-accent text-sm font-medium mb-6"
+                    transition={{ duration: 0.4 }}
+                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-accent text-sm font-medium mb-8"
                 >
-                    <Sparkles size={16} />
-                    <span>Web Development Portfolio</span>
+                    <Sparkles size={14} />
+                    <span>Building SaaS & AI Products</span>
                 </motion.div>
 
+                {/* Heading */}
                 <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight"
+                    transition={{ duration: 0.4, delay: 0.08 }}
+                    className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-text-primary mb-6 leading-[1.1] tracking-tight"
                 >
-                    I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">LOUIS SALVOSA</span> <br />
-                    Web Developer
+                    Hi, I'm{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-secondary">
+                        Louis Salvosa
+                    </span>
+                    <br />
+                    <span className="text-text-secondary text-3xl sm:text-4xl md:text-5xl font-semibold">
+                        Full-Stack Developer
+                    </span>
                 </motion.h1>
 
+                {/* Subheading */}
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10"
+                    transition={{ duration: 0.4, delay: 0.16 }}
+                    className="text-base md:text-lg text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed"
                 >
-                    I specialize in building modern, responsive, and high-performance web applications using the latest technologies. Let’s bring your ideas to life on the web!
+                    I design and build full-stack web applications, SaaS platforms, and
+                    AI-powered tools. Focused on clean architecture, great UX, and
+                    shipping products that solve real problems.
                 </motion.p>
 
+                {/* CTAs */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex flex-col md:flex-row gap-4 justify-center mb-16"
+                    transition={{ duration: 0.4, delay: 0.24 }}
+                    className="flex flex-col sm:flex-row gap-4 justify-center mb-20"
                 >
                     <a
                         href="#projects"
-                        className="group flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white rounded-lg font-bold text-lg hover:bg-blue-600 transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]"
+                        className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-accent text-white rounded-full font-semibold text-sm hover:shadow-[0_0_24px_rgba(59,130,246,0.35)] transition-all duration-200 cursor-pointer"
                     >
                         View Projects
-                        <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight
+                            size={16}
+                            className="group-hover:translate-x-0.5 transition-transform duration-200"
+                        />
                     </a>
                     <a
                         href="#contact"
-                        className="flex items-center justify-center gap-2 px-8 py-4 bg-white/5 text-white border border-white/10 rounded-lg font-bold text-lg hover:bg-white/10 transition-all"
+                        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 glass hover:bg-white/[0.08] text-text-primary rounded-full font-semibold text-sm transition-all duration-200 cursor-pointer"
                     >
-                        <Bot />
-                        Contact Me
+                        Get in Touch
                     </a>
                 </motion.div>
 
+                {/* Tech Stack Bar */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="border-t border-white/5 pt-8"
+                    transition={{ duration: 0.4, delay: 0.32 }}
+                    className="border-t border-white/[0.06] pt-8"
                 >
-                    <p className="text-text-secondary text-sm mb-6 uppercase tracking-wider">Web Development Technologies</p>
-                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
-                        {/* FastAPI */}
-                        <div className="flex items-center gap-2" title="FastAPI">
-                            <img src="https://cdn.simpleicons.org/fastapi/white" alt="FastAPI" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
-                            <span className="font-display font-bold text-white text-lg">FastAPI</span>
-                        </div>
-                        {/* JavaScript */}
-                        <div className="flex items-center gap-2" title="JavaScript">
-                            <img src="https://cdn.simpleicons.org/javascript/white" alt="JavaScript" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
-                            <span className="font-display font-bold text-white text-lg">JavaScript</span>
-                        </div>
-                        {/* HTML5 */}
-                        <div className="flex items-center gap-2" title="HTML5">
-                            <img src="https://cdn.simpleicons.org/html5/white" alt="HTML5" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
-                            <span className="font-display font-bold text-white text-lg">HTML5</span>
-                        </div>
-                        {/* CSS3 */}
-                        <div className="flex items-center gap-2" title="CSS3">
-                            <img src="https://cdn.simpleicons.org/css/white" alt="CSS3" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
-                            <span className="font-display font-bold text-white text-lg">CSS3</span>
-                        </div>
-                        {/* Python */}
-                        <div className="flex items-center gap-2" title="Python">
-                            <img src="https://cdn.simpleicons.org/python/white" alt="Python" className="h-8 w-auto hover:opacity-80 transition-all duration-300" />
-                            <span className="font-display font-bold text-white text-lg">Python</span>
-                        </div>
+                    <p className="text-text-secondary/60 text-xs mb-5 uppercase tracking-widest font-medium">
+                        Technologies I Work With
+                    </p>
+                    <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+                        {techStack.map((tech) => (
+                            <div
+                                key={tech.name}
+                                className="flex items-center gap-2 opacity-50 hover:opacity-80 transition-opacity duration-200"
+                                title={tech.name}
+                            >
+                                <img
+                                    src={tech.icon}
+                                    alt={tech.name}
+                                    className="h-5 w-auto"
+                                />
+                                <span className="text-text-secondary text-xs font-medium hidden sm:inline">
+                                    {tech.name}
+                                </span>
+                            </div>
+                        ))}
                     </div>
                 </motion.div>
             </div>

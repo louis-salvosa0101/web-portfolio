@@ -7,19 +7,20 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: '#09090B', // Rich Black (Override)
-                secondary: '#18181B', // Dark Grey
-                accent: '#2563EB', // Electric Blue
-                'text-primary': '#FAFAFA', // Off-white
-                'text-secondary': '#A1A1AA', // Light Grey
+                primary: '#0A0A0F',
+                secondary: '#12121A',
+                accent: '#3B82F6',
+                'accent-secondary': '#8B5CF6',
+                'text-primary': '#F1F5F9',
+                'text-secondary': '#94A3B8',
             },
             fontFamily: {
-                display: ['Orbitron', 'sans-serif'],
-                body: ['Exo 2', 'sans-serif'],
+                display: ['Space Grotesk', 'sans-serif'],
+                body: ['Inter', 'sans-serif'],
             },
             animation: {
-                'fade-in': 'fadeIn 0.5s ease-out forwards',
-                'slide-up': 'slideUp 0.5s ease-out forwards',
+                'fade-in': 'fadeIn 0.4s ease-out forwards',
+                'slide-up': 'slideUp 0.4s ease-out forwards',
             },
             keyframes: {
                 fadeIn: {
@@ -27,7 +28,7 @@ export default {
                     '100%': { opacity: '1' },
                 },
                 slideUp: {
-                    '0%': { transform: 'translateY(20px)', opacity: '0' },
+                    '0%': { transform: 'translateY(12px)', opacity: '0' },
                     '100%': { transform: 'translateY(0)', opacity: '1' },
                 },
             },

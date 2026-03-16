@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Cpu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -22,11 +22,19 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-primary/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
-            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                <a href="#" className="flex items-center gap-2 text-2xl font-display font-bold text-white uppercase tracking-tighter">
-                    <Cpu className="text-accent" />
-                    <span>LOUIS<span className="text-accent">.</span>S</span>
+        <nav
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+                scrolled
+                    ? 'glass-panel py-3'
+                    : 'bg-transparent py-5'
+            }`}
+        >
+            <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+                <a
+                    href="#"
+                    className="text-xl font-display font-bold text-text-primary tracking-tight cursor-pointer"
+                >
+                    louis<span className="text-accent">.</span>salvosa
                 </a>
 
                 {/* Desktop Nav */}
@@ -35,22 +43,25 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-text-secondary hover:text-accent transition-colors text-sm font-medium tracking-wide uppercase"
+                            className="text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm font-medium cursor-pointer"
                         >
                             {link.name}
                         </a>
                     ))}
                     <a
                         href="#contact"
-                        className="px-5 py-2 bg-accent text-white rounded-lg font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20"
+                        className="px-5 py-2 bg-accent/10 text-accent border border-accent/20 rounded-full text-sm font-semibold hover:bg-accent hover:text-white transition-all duration-200 cursor-pointer"
                     >
                         Let's Talk
                     </a>
                 </div>
 
                 {/* Mobile Toggle */}
-                <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <X /> : <Menu />}
+                <button
+                    className="md:hidden text-text-primary cursor-pointer"
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    {isOpen ? <X size={22} /> : <Menu size={22} />}
                 </button>
             </div>
 
@@ -61,19 +72,27 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-secondary border-b border-white/5 overflow-hidden"
+                        transition={{ duration: 0.2 }}
+                        className="md:hidden glass-panel overflow-hidden mt-1 mx-4 rounded-2xl"
                     >
-                        <div className="flex flex-col p-6 gap-4">
+                        <div className="flex flex-col p-5 gap-3">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-text-secondary hover:text-accent text-lg font-medium"
+                                    className="text-text-secondary hover:text-text-primary transition-colors duration-200 text-base font-medium py-1 cursor-pointer"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.name}
                                 </a>
                             ))}
+                            <a
+                                href="#contact"
+                                className="mt-2 px-5 py-2.5 bg-accent text-white rounded-full text-sm font-semibold text-center hover:bg-blue-600 transition-colors duration-200 cursor-pointer"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Let's Talk
+                            </a>
                         </div>
                     </motion.div>
                 )}
