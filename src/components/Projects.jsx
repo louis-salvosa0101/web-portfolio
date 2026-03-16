@@ -46,7 +46,11 @@ const Projects = () => {
                     <div className="h-1 w-20 bg-accent rounded-full" />
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/**
+                 * Center the project cards when there are only one or two projects,
+                 * otherwise use the standard responsive grid layout.
+                 */}
+                <div className={`gap-8 ${projects.length <= 2 ? 'flex flex-col md:flex-row justify-center items-start' : 'grid md:grid-cols-2 lg:grid-cols-3'}`}>
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
@@ -54,7 +58,7 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative bg-secondary rounded-xl overflow-hidden border border-white/5 hover:border-accent/50 transition-colors"
+                            className={`group relative bg-secondary rounded-xl overflow-hidden border border-white/5 hover:border-accent/50 transition-colors w-full ${projects.length <= 2 ? 'max-w-lg' : ''}`}
                         >
                             <div className="aspect-video overflow-hidden">
                                 <img
