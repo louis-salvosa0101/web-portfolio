@@ -3,7 +3,7 @@ import { ArrowRight, Bot, Sparkles } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 pb-24 md:pb-0 overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute top-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-[100px]" />
