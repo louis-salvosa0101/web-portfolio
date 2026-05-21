@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#09090b" />
+  <defs>
+    <linearGradient id="qa-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#qa-grad2)" />
+  <text x="80" y="60" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="20" fill="#ffffff">Session Manager</text>
+  
+  <rect x="80" y="90" width="640" height="310" rx="8" fill="#18181b" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+  
+  <rect x="100" y="110" width="600" height="30" rx="4" fill="#09090b" />
+  <text x="120" y="129" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="10" fill="#a1a1aa">STUDENT NAME</text>
+  <text x="320" y="129" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="10" fill="#a1a1aa">TIME IN</text>
+  <text x="440" y="129" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="10" fill="#a1a1aa">STATUS</text>
+  <text x="560" y="129" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="10" fill="#a1a1aa">FINE (PHP)</text>
+  
+  <text x="120" y="170" font-family="'Exo 2', sans-serif" font-size="12" fill="#ffffff">Karl Louis Salvosa</text>
+  <text x="320" y="170" font-family="'Exo 2', sans-serif" font-size="12" fill="#ffffff">08:02 AM</text>
+  <rect x="440" y="156" width="60" height="18" rx="9" fill="#10b981" fill-opacity="0.1" />
+  <text x="470" y="169" font-family="'Orbitron', sans-serif" font-size="9" fill="#10b981" text-anchor="middle">ON TIME</text>
+  <text x="560" y="170" font-family="'Orbitron', sans-serif" font-size="12" fill="#a1a1aa">0.00</text>
+  <line x1="100" y1="190" x2="700" y2="190" stroke="#ffffff" stroke-opacity="0.05" />
+
+  <text x="120" y="220" font-family="'Exo 2', sans-serif" font-size="12" fill="#ffffff">Christian Reyes</text>
+  <text x="320" y="220" font-family="'Exo 2', sans-serif" font-size="12" fill="#ffffff">08:24 AM</text>
+  <rect x="440" y="206" width="60" height="18" rx="9" fill="#f59e0b" fill-opacity="0.1" />
+  <text x="470" y="219" font-family="'Orbitron', sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">LATE</text>
+  <text x="560" y="220" font-family="'Orbitron', sans-serif" font-size="12" fill="#f59e0b">50.00</text>
+  <line x1="100" y1="240" x2="700" y2="240" stroke="#ffffff" stroke-opacity="0.05" />
+
+  <text x="120" y="270" font-family="'Exo 2', sans-serif" font-size="12" fill="#ffffff">Sophia Mendoza</text>
+  <text x="320" y="270" font-family="'Exo 2', sans-serif" font-size="12" fill="#a1a1aa">--:-- --</text>
+  <rect x="440" y="256" width="60" height="18" rx="9" fill="#ef4444" fill-opacity="0.1" />
+  <text x="470" y="269" font-family="'Orbitron', sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">ABSENT</text>
+  <text x="560" y="270" font-family="'Orbitron', sans-serif" font-size="12" fill="#ef4444">100.00</text>
+  
+  <rect x="100" y="340" width="140" height="35" rx="6" fill="#10b981" />
+  <text x="170" y="362" font-family="'Orbitron', sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">CLOSE SESSION</text>
+  
+  <rect x="260" y="340" width="140" height="35" rx="6" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" />
+  <text x="330" y="362" font-family="'Orbitron', sans-serif" font-size="11" fill="#a1a1aa" text-anchor="middle" font-weight="bold">EXPORT EXCEL</text>
+</svg>
