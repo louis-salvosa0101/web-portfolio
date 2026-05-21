@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#09090b" />
+  <defs>
+    <linearGradient id="qa-grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#qa-grad3)" />
+  <text x="80" y="60" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="20" fill="#ffffff">Bulk Student Import</text>
+  
+  <rect x="80" y="90" width="640" height="310" rx="8" fill="#18181b" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+  
+  <rect x="120" y="120" width="560" height="150" rx="8" fill="#09090b" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6 4" />
+  
+  <circle cx="400" cy="180" r="22" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5" />
+  <path d="M 400,190 L 400,170 M 400,170 L 393,177 M 400,170 L 407,177" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" />
+  
+  <text x="400" y="222" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="12" fill="#ffffff" text-anchor="middle">Drag &amp; drop student_list.xlsx</text>
+  <text x="400" y="240" font-family="'Exo 2', sans-serif" font-size="10" fill="#a1a1aa" text-anchor="middle">Excel sheet must contain: Name, Email, StudentID, YearLevel</text>
+  
+  <text x="120" y="305" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="12" fill="#ffffff">Recent Imports</text>
+  <rect x="120" y="325" width="560" height="50" rx="4" fill="#09090b" stroke="#ffffff" stroke-opacity="0.05" />
+  
+  <text x="140" y="354" font-family="'Exo 2', sans-serif" font-size="11" fill="#10b981">✓ 142 students successfully imported from IT_Batch2026.xlsx</text>
+  <text x="640" y="354" font-family="'Exo 2', sans-serif" font-size="11" fill="#a1a1aa" text-anchor="end">2 mins ago</text>
+</svg>

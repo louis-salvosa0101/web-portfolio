@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#09090b" />
+  <defs>
+    <linearGradient id="sf-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#sf-grad2)" />
+  <text x="80" y="60" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="20" fill="#ffffff">Review Document</text>
+  
+  <rect x="80" y="90" width="640" height="310" rx="8" fill="#18181b" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+  
+  <rect x="100" y="110" width="280" height="270" rx="6" fill="#09090b" stroke="#ffffff" stroke-opacity="0.1" />
+  <text x="120" y="150" font-family="'Exo 2', sans-serif" font-weight="bold" font-size="14" fill="#ffffff">MEMORANDUM #2026-12</text>
+  <rect x="120" y="175" width="240" height="6" rx="2" fill="#ffffff" fill-opacity="0.1" />
+  <rect x="120" y="190" width="240" height="6" rx="2" fill="#ffffff" fill-opacity="0.1" />
+  <rect x="120" y="205" width="200" height="6" rx="2" fill="#ffffff" fill-opacity="0.1" />
+  
+  <rect x="300" y="300" width="60" height="60" rx="4" fill="#ffffff" />
+  <rect x="306" y="306" width="16" height="16" fill="#09090b" />
+  <rect x="338" y="306" width="16" height="16" fill="#09090b" />
+  <rect x="306" y="338" width="16" height="16" fill="#09090b" />
+  <rect x="326" y="326" width="8" height="8" fill="#09090b" />
+  
+  <text x="410" y="140" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="14" fill="#ffffff">Signatory Action</text>
+  <text x="410" y="165" font-family="'Exo 2', sans-serif" font-size="11" fill="#a1a1aa">Review the contents of this document and select an action below.</text>
+  
+  <rect x="410" y="200" width="130" height="35" rx="6" fill="#10b981" />
+  <text x="475" y="222" font-family="'Orbitron', sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">APPROVE &amp; SIGN</text>
+  
+  <rect x="560" y="200" width="130" height="35" rx="6" fill="#ef4444" />
+  <text x="625" y="222" font-family="'Orbitron', sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">REJECT</text>
+  
+  <rect x="410" y="250" width="280" height="35" rx="6" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" />
+  <text x="550" y="272" font-family="'Orbitron', sans-serif" font-size="11" fill="#a1a1aa" text-anchor="middle" font-weight="bold">REQUEST REVISIONS</text>
+  
+  <line x1="410" y1="310" x2="690" y2="310" stroke="#ffffff" stroke-opacity="0.1" />
+  
+  <text x="410" y="340" font-family="'Exo 2', sans-serif" font-size="11" fill="#a1a1aa">Logged in as:</text>
+  <text x="410" y="360" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="12" fill="#ffffff">Dr. Arnold Carter</text>
+</svg>

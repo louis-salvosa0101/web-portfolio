@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#09090b" />
+  <defs>
+    <linearGradient id="sf-grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#sf-grad3)" />
+  <text x="80" y="60" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="20" fill="#ffffff">Public Verification Endpoint</text>
+  
+  <rect x="180" y="100" width="440" height="290" rx="12" fill="#18181b" stroke="#10b981" stroke-width="1.5" />
+  
+  <circle cx="400" cy="180" r="40" fill="#10b981" opacity="0.15" filter="blur(15px)" />
+  
+  <circle cx="400" cy="170" r="30" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2" />
+  <path d="M 390,170 L 396,176 L 410,162" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <text x="400" y="225" font-family="'Orbitron', sans-serif" font-weight="bold" font-size="16" fill="#10b981" text-anchor="middle">VERIFIED DOCUMENT</text>
+  
+  <text x="400" y="255" font-family="'Exo 2', sans-serif" font-size="11" fill="#a1a1aa" text-anchor="middle">Hash ID: 948a...e2f1</text>
+  <line x1="220" y1="275" x2="580" y2="275" stroke="#ffffff" stroke-opacity="0.05" />
+  
+  <text x="220" y="305" font-family="'Exo 2', sans-serif" font-size="12" fill="#a1a1aa">Document:</text>
+  <text x="320" y="305" font-family="'Orbitron', sans-serif" font-size="12" fill="#ffffff">Academic Policy Update.pdf</text>
+  
+  <text x="220" y="330" font-family="'Exo 2', sans-serif" font-size="12" fill="#a1a1aa">Authority:</text>
+  <text x="320" y="330" font-family="'Orbitron', sans-serif" font-size="12" fill="#ffffff">Office of the VP Academics</text>
+  
+  <text x="220" y="355" font-family="'Exo 2', sans-serif" font-size="12" fill="#a1a1aa">Signed Date:</text>
+  <text x="320" y="355" font-family="'Orbitron', sans-serif" font-size="12" fill="#ffffff">May 21, 2026 - 11:24 AM</text>
+</svg>
