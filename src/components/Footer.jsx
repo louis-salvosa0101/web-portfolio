@@ -2,10 +2,10 @@ import { Github, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-secondary/50 border-t border-white/5 py-12">
-            <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="text-center md:text-left">
-                    <h3 className="text-xl font-display font-bold text-white mb-2 uppercase tracking-tighter">LOUIS SALVOSA</h3>
+        <footer className="bg-secondary/50 border-t border-white/5 py-10 sm:py-12 pb-[max(2.5rem,env(safe-area-inset-bottom))]">
+            <div className="max-w-7xl mx-auto container-padding flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                <div>
+                    <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 uppercase tracking-tighter">LOUIS SALVOSA</h3>
                     <p className="text-text-secondary text-sm">Building modern, high-performance web applications.</p>
                 </div>
 
@@ -15,13 +15,13 @@ const Footer = () => {
                         { Icon: Linkedin, href: 'https://www.linkedin.com/in/louis-salvosa' },
                         { Icon: Instagram, href: 'https://www.instagram.com/louistingting_/' }
                     ].map(({ Icon, href }, i) => (
-                        <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-accent transition-colors">
-                            <Icon size={20} />
+                        <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="touch-target text-text-secondary hover:text-accent transition-colors rounded-lg hover:bg-white/5">
+                            <Icon size={22} />
                         </a>
                     ))}
                 </div>
 
-                <div className="text-text-secondary text-sm">
+                <div className="text-text-secondary text-xs sm:text-sm max-w-xs md:max-w-none">
                     &copy; {new Date().getFullYear()} LOUIS SALVOSA. All rights reserved.
                 </div>
             </div>

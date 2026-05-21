@@ -119,7 +119,7 @@ const SafeImage = ({ src, alt, className, ...props }) => {
     );
 };
 
-const Carousel = ({ images, title }) => {
+const Carousel = ({ images, title, imageFit = 'cover' }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(0);
     const [touchStart, setTouchStart] = useState(null);
@@ -170,7 +170,7 @@ const Carousel = ({ images, title }) => {
 
     return (
         <div 
-            className="relative w-full h-full flex flex-col justify-between overflow-hidden bg-black/40 group/carousel"
+            className={`relative w-full h-full flex flex-col justify-between overflow-hidden group/carousel ${imageFit === 'contain' ? 'bg-zinc-950' : 'bg-black/40'}`}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -205,7 +205,7 @@ const Carousel = ({ images, title }) => {
                             }}
                             onError={() => setImageErrors(prev => ({ ...prev, [currentIndex]: true }))}
                             alt={`${title} screenshot ${currentIndex + 1}`}
-                            className="w-full h-full object-cover select-none"
+                            className={`w-full h-full select-none ${imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
                             loading={currentIndex === 0 ? "eager" : "lazy"}
                         />
                     )}
@@ -216,14 +216,14 @@ const Carousel = ({ images, title }) => {
                     <>
                         <button
                             onClick={handlePrev}
-                            className="absolute left-4 p-2 rounded-full bg-black/40 hover:bg-black/70 text-white transition-all border border-white/10 opacity-0 group-hover/carousel:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none z-10"
+                            className="absolute left-2 sm:left-4 touch-target p-2 rounded-full bg-black/50 hover:bg-black/70 active:bg-black/80 text-white transition-all border border-white/10 opacity-100 sm:opacity-0 sm:group-hover/carousel:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none z-10"
                             aria-label="Previous screenshot"
                         >
                             <ChevronLeft size={20} />
                         </button>
                         <button
                             onClick={handleNext}
-                            className="absolute right-4 p-2 rounded-full bg-black/40 hover:bg-black/70 text-white transition-all border border-white/10 opacity-0 group-hover/carousel:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none z-10"
+                            className="absolute right-2 sm:right-4 touch-target p-2 rounded-full bg-black/50 hover:bg-black/70 active:bg-black/80 text-white transition-all border border-white/10 opacity-100 sm:opacity-0 sm:group-hover/carousel:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none z-10"
                             aria-label="Next screenshot"
                         >
                             <ChevronRight size={20} />
@@ -335,20 +335,20 @@ const Projects = () => {
     }, [selectedProject]);
 
     return (
-        <section id="projects" className="py-24 relative">
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="projects" className="section-padding relative overflow-hidden">
+            <div className="max-w-7xl mx-auto container-padding">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-16"
+                    className="mb-10 sm:mb-16"
                 >
-                    <h2 className="text-4xl font-display font-bold text-white mb-4">Web Development Projects</h2>
+                    <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-3 sm:mb-4">Web Development Projects</h2>
                     <div className="h-1 w-20 bg-accent rounded-full" />
                 </motion.div>
 
-                {/* Grid Layout */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Grid Layout — auto-fit + justify-center keeps cards centered when fewer than 3 */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(min(100%,320px),380px))] justify-center gap-4 sm:gap-6 md:gap-8">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
@@ -378,7 +378,7 @@ const Projects = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent opacity-60 pointer-events-none" />
                             </div>
 
-                            <div className="p-6">
+                            <div className="p-4 sm:p-6">
                                 <div className="mb-3">
                                     <span className="text-accent text-xs font-bold tracking-wider uppercase">{project.category}</span>
                                     <h3 className="text-xl font-bold text-white mt-1 group-hover:text-accent transition-colors font-display">{project.title}</h3>
@@ -402,7 +402,7 @@ const Projects = () => {
             {/* Expansion Detailed View Modal */}
             <AnimatePresence>
                 {selectedProject && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6">
+                    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6">
                         {/* Backdrop overlay */}
                         <motion.div
                             variants={backdropVariants}
@@ -413,7 +413,7 @@ const Projects = () => {
                             className="fixed inset-0 bg-primary/90 backdrop-blur-md cursor-pointer"
                         />
 
-                        {/* Modal Body */}
+                        {/* Modal Body — carousel top, details bottom */}
                         <motion.div
                             ref={modalRef}
                             variants={modalVariants}
@@ -423,60 +423,69 @@ const Projects = () => {
                             role="dialog"
                             aria-modal="true"
                             aria-labelledby="modal-title"
-                            className="relative bg-secondary w-full max-w-5xl rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 flex flex-col md:flex-row md:max-h-[85vh] text-left"
+                            className="relative bg-secondary w-full max-w-4xl rounded-t-2xl sm:rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 flex flex-col max-h-[92dvh] sm:max-h-[min(92vh,880px)] text-left"
                         >
-                            {/* Close Button */}
-                            <button
-                                onClick={() => setSelectedProject(null)}
-                                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/40 hover:bg-black/75 text-white transition-colors border border-white/10 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
-                                aria-label="Close modal"
-                            >
-                                <X size={18} />
-                            </button>
-
-                            {/* Left Side: Image Carousel — locked to 16:9 */}
-                            <div className="w-full md:w-[55%] flex-shrink-0">
-                                <div className="aspect-video w-full relative bg-black overflow-hidden">
-                                    <div className="absolute inset-0">
-                                        <Carousel images={selectedProject.images} title={selectedProject.title} />
-                                    </div>
+                            {/* Top: Image carousel */}
+                            <div className="relative shrink-0 bg-black border-b border-white/10">
+                                <button
+                                    onClick={() => setSelectedProject(null)}
+                                    className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 touch-target p-2 rounded-full bg-black/50 hover:bg-black/75 active:bg-black/90 text-white transition-colors border border-white/10 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
+                                    aria-label="Close modal"
+                                >
+                                    <X size={20} />
+                                </button>
+                                <div className="aspect-video w-full max-h-[38vh] min-[480px]:max-h-[42vh] sm:max-h-[48vh] relative overflow-hidden">
+                                    <Carousel
+                                        images={selectedProject.images}
+                                        title={selectedProject.title}
+                                        imageFit="contain"
+                                    />
                                 </div>
                             </div>
 
-                            {/* Right Side: Scrollable Details */}
-                            <div className="w-full md:w-[45%] p-6 md:p-8 overflow-y-auto flex flex-col justify-between max-h-[50vh] md:max-h-[85vh]">
-                                <div>
-                                    <span className="text-accent text-xs font-bold tracking-wider uppercase">{selectedProject.category}</span>
-                                    <h3 id="modal-title" className="text-2xl font-bold font-display text-white mt-1 mb-4">{selectedProject.title}</h3>
-                                    
-                                    <p className="text-text-secondary text-sm leading-relaxed mb-6">
-                                        {selectedProject.description}
-                                    </p>
-
-                                    <div className="mb-6">
-                                        <h4 className="text-white font-bold font-display text-[11px] uppercase tracking-wider mb-2">Key Features</h4>
-                                        <ul className="space-y-1.5 text-text-secondary text-xs">
-                                            {selectedProject.features.map((feat, idx) => (
-                                                <li key={idx} className="flex items-start gap-2">
-                                                    <span className="text-accent mt-0.5">•</span>
-                                                    <span>{feat}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
+                            {/* Bottom: Scrollable description & details */}
+                            <div className="flex flex-col flex-1 min-h-0">
+                                <div className="flex-1 overflow-y-auto overscroll-contain p-4 sm:p-6 md:p-8 space-y-5 sm:space-y-6">
+                                    <div>
+                                        <span className="text-accent text-xs font-bold tracking-wider uppercase">{selectedProject.category}</span>
+                                        <h3 id="modal-title" className="text-xl sm:text-2xl md:text-3xl font-bold font-display text-white mt-1 pr-10">
+                                            {selectedProject.title}
+                                        </h3>
                                     </div>
 
-                                    <div className="mb-6">
-                                        <h4 className="text-white font-bold font-display text-[11px] uppercase tracking-wider mb-2">My Role / Contributions</h4>
-                                        <p className="text-text-secondary text-xs leading-relaxed">
-                                            {selectedProject.role}
+                                    <div>
+                                        <h4 className="text-white font-bold font-display text-[11px] uppercase tracking-wider mb-2">About</h4>
+                                        <p className="text-text-secondary text-sm md:text-[15px] leading-relaxed">
+                                            {selectedProject.description}
                                         </p>
                                     </div>
 
-                                    <div className="mb-8">
+                                    <div className="grid sm:grid-cols-2 gap-6">
+                                        <div>
+                                            <h4 className="text-white font-bold font-display text-[11px] uppercase tracking-wider mb-2">Key Features</h4>
+                                            <ul className="space-y-2 text-text-secondary text-sm">
+                                                {selectedProject.features.map((feat, idx) => (
+                                                    <li key={idx} className="flex items-start gap-2">
+                                                        <span className="text-accent mt-1 shrink-0">•</span>
+                                                        <span>{feat}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h4 className="text-white font-bold font-display text-[11px] uppercase tracking-wider mb-2">My Role / Contributions</h4>
+                                            <p className="text-text-secondary text-sm leading-relaxed">
+                                                {selectedProject.role}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div>
                                         <h4 className="text-white font-bold font-display text-[11px] uppercase tracking-wider mb-3">Technologies Used</h4>
-                                        <div className="flex flex-wrap gap-1.5">
+                                        <div className="flex flex-wrap gap-2">
                                             {selectedProject.tags.map((tag) => (
-                                                <span key={tag} className="px-2.5 py-1 bg-white/5 hover:bg-white/10 rounded-md text-[10px] font-semibold text-white border border-white/5 transition-colors">
+                                                <span key={tag} className="px-2.5 py-1 bg-white/5 hover:bg-white/10 rounded-md text-xs font-semibold text-white border border-white/5 transition-colors">
                                                     {tag}
                                                 </span>
                                             ))}
@@ -484,14 +493,14 @@ const Projects = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-white/5 mt-auto">
+                                <div className="shrink-0 flex flex-col sm:flex-row gap-3 p-4 sm:p-6 md:px-8 md:pb-8 pb-[max(1rem,env(safe-area-inset-bottom))] border-t border-white/5 bg-secondary">
                                     <a
                                         href={selectedProject.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-lg text-xs font-semibold transition-colors border border-white/10 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
+                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3.5 min-h-11 bg-white/5 hover:bg-white/10 text-white rounded-lg text-sm font-semibold transition-colors border border-white/10 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
                                     >
-                                        <Github size={14} />
+                                        <Github size={16} />
                                         Code Repository
                                     </a>
                                     {selectedProject.demo && (
@@ -499,9 +508,9 @@ const Projects = () => {
                                             href={selectedProject.demo}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-accent hover:bg-blue-600 text-white rounded-lg text-xs font-semibold transition-colors shadow-lg shadow-blue-500/10 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
+                                            className="flex-1 flex items-center justify-center gap-2 px-4 py-3.5 min-h-11 bg-accent hover:bg-blue-600 text-white rounded-lg text-sm font-semibold transition-colors shadow-lg shadow-blue-500/10 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
                                         >
-                                            <ExternalLink size={14} />
+                                            <ExternalLink size={16} />
                                             Live Demo
                                         </a>
                                     )}

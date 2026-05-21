@@ -5,8 +5,18 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-primary text-text-primary font-body antialiased selection:bg-accent selection:text-white;
+    overflow-x: hidden;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 
   h1,
@@ -22,5 +32,17 @@
 @layer utilities {
   .glass {
     @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6;
+  }
+
+  .touch-target {
+    @apply min-h-11 min-w-11 inline-flex items-center justify-center;
   }
 }

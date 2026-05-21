@@ -8,24 +8,24 @@ const skills = [
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-24 bg-secondary/30 relative overflow-hidden">
+        <section id="skills" className="section-padding bg-secondary/30 relative overflow-hidden">
             {/* Decorative */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
+            <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-accent/5 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="max-w-7xl mx-auto container-padding relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-16 text-center"
+                    className="mb-10 sm:mb-16 text-center"
                 >
-                    <h2 className="text-4xl font-display font-bold text-white mb-4">Web Development Tech Stack</h2>
+                    <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-3 sm:mb-4">Tech Stack</h2>
                     <p className="text-text-secondary max-w-2xl mx-auto">
                         Tools and technologies I use to build modern, responsive, and high-performance web applications.
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                     {skills.map((group, index) => (
                         <motion.div
                             key={index}
@@ -33,7 +33,7 @@ const Skills = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-primary/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-accent/50 transition-colors"
+                            className="bg-primary/50 backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-8 hover:border-accent/50 transition-colors"
                         >
                             <h3 className="text-xl font-display font-bold text-white mb-6 border-b border-white/5 pb-4">
                                 {group.category}
