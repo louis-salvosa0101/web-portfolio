@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { ExternalLink, Github, X, ChevronLeft, ChevronRight, AlertTriangle } from 'lucide-react';
+import { cardReveal, fadeUp, staggerContainer, viewportConfig } from '../lib/motion';
 
 const projects = [
     {
@@ -73,14 +74,16 @@ const backdropVariants = {
 };
 
 const modalVariants = {
-    hidden: { scale: 0.95, opacity: 0 },
+    hidden: { scale: 0.95, opacity: 0, y: 20 },
     visible: { 
         scale: 1, 
+        y: 0,
         opacity: 1,
         transition: { type: 'spring', damping: 25, stiffness: 350 }
     },
     exit: { 
         scale: 0.95, 
+        y: 16,
         opacity: 0,
         transition: { duration: 0.2 }
     }
@@ -256,6 +259,7 @@ const Carousel = ({ images, title, imageFit = 'cover' }) => {
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const modalRef = useRef(null);
+    const shouldReduceMotion = useReducedMotion();
 
     // Lock body scroll when modal is open
     useEffect(() => {
@@ -336,11 +340,13 @@ const Projects = () => {
 
     return (
         <section id="projects" className="section-padding relative overflow-hidden">
+            <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-accent/5 blur-[90px] pointer-events-none" />
             <div className="max-w-7xl mx-auto container-padding">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportConfig}
                     className="mb-10 sm:mb-16"
                 >
                     <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-3 sm:mb-4">Web Development Projects</h2>
@@ -348,15 +354,24 @@ const Projects = () => {
                 </motion.div>
 
                 {/* Grid Layout — auto-fit + justify-center keeps cards centered when fewer than 3 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(min(100%,320px),380px))] justify-center gap-4 sm:gap-6 md:gap-8">
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportConfig}
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(min(100%,320px),380px))] justify-center gap-4 sm:gap-6 md:gap-8"
+                >
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                            variants={cardReveal}
+                            whileHover={shouldReduceMotion ? undefined : {
+                                y: -8,
+                                scale: 1.015,
+                                boxShadow: '0 22px 60px rgba(37, 99, 235, 0.16)',
+                                transition: { duration: 0.22 }
+                            }}
+                            whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
                             onClick={() => setSelectedProject(project)}
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
@@ -369,6 +384,7 @@ const Projects = () => {
                             aria-label={`View details for ${project.title}`}
                             className="group relative bg-secondary rounded-xl overflow-hidden border border-white/5 hover:border-accent/40 transition-colors w-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                         >
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.18),transparent_55%)] pointer-events-none" />
                             <div className="aspect-video overflow-hidden relative bg-black">
                                 <SafeImage
                                     src={project.images[0]}
@@ -388,15 +404,19 @@ const Projects = () => {
 
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.map((tag) => (
-                                        <span key={tag} className="px-2.5 py-1 bg-white/5 rounded-md text-[11px] font-medium text-white border border-white/10">
+                                        <motion.span
+                                            key={tag}
+                                            whileHover={shouldReduceMotion ? undefined : { y: -2, scale: 1.04 }}
+                                            className="px-2.5 py-1 bg-white/5 rounded-md text-[11px] font-medium text-white border border-white/10"
+                                        >
                                             {tag}
-                                        </span>
+                                        </motion.span>
                                     ))}
                                 </div>
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
 
             {/* Expansion Detailed View Modal */}
@@ -420,6 +440,7 @@ const Projects = () => {
                             initial="hidden"
                             animate="visible"
                             exit="exit"
+                            transition={shouldReduceMotion ? { duration: 0.01 } : undefined}
                             role="dialog"
                             aria-modal="true"
                             aria-labelledby="modal-title"
